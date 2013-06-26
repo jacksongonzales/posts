@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="span6 offset1">
+    <%= form_tag do %>
+
+      <%= label_tag(:q, "Street:") %>
+      <%= text_field_tag(:q) %>
+
+      <%= label_tag(:q, "City:") %>
+      <%= text_field_tag(:q) %>
+
+      <%= label_tag(:q, "State:") %>
+      <%= text_field_tag(:q) %>
+
+      <%= label_tag(:q, "Zip Code:") %>
+      <%= text_field_tag(:q) %>
+
+      <%= label_tag(:q, "Type:") %>
+      <%= radio_button_tag(:type, "rental") %>
+      <%= label_tag(:type_rent, "Rental") %>
+      <%= radio_button_tag(:type, "residential") %>
+      <%= label_tag(:type_resident, "Residential") %>
+
+      <%= label_tag(:q, "Property Type:") %>
+      <select name="property_id" id="property_id">
+        <option value="1">Apartment</option>
+        <option value="2">Family Home</option>
+        <option value="3">Condo</option>
+        <option value="4">Share</option>
+      </select>
+
+    <p>
+      <%= label_tag(:q, "Rent:") %>
+     $<%= text_field_tag(:q) %>
+      <select name="per_id" id="per_id">
+        <option value="1">per week</option>
+        <option value="2">per month</option>
+        <option value="3">per year</option>
+      </select>
+    </p>
+
+      <%= label_tag(:q, "Deposit:") %>
+     $<%= text_field_tag(:q) %>
+
+      <%= label_tag(:q, "Beds:") %>
+      <select name="beds_id" id="beds_id">
+        <option value="1">Studio</option>
+        <option value="2">1</option>
+        <option value="3">2</option>
+        <option value="4">3</option>
+        <option value="5">4</option>
+        <option value="6">5</option>
+        <option value="7">6</option>
+        <option value="8">7</option>
+        <option value="9">8</option>
+        <option value="10">9+</option>
+      </select>
+
+      <%= label_tag(:q, "Baths:") %>
+      <select name="baths_id" id="baths_id">
+        <option value="1">0</option>
+        <option value="2">1</option>
+        <option value="3">2</option>
+        <option value="4">3</option>
+        <option value="5">4</option>
+        <option value="6">5</option>
+        <option value="7">6</option>
+        <option value="8">7</option>
+        <option value="9">8</option>
+        <option value="10">9+</option>
+      </select>
+
+      <%= submit_tag "Next", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
