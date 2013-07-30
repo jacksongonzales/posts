@@ -11,13 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130624234315) do
+ActiveRecord::Schema.define(:version => 20130627162346) do
 
   create_table "forms", :force => true do |t|
-    t.string   "user"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "title"
+    t.string   "description"
+    t.integer  "price"
+    t.string   "amenities"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip_code"
+    t.string   "type"
+    t.integer  "baths"
+    t.integer  "beds_id"
+    t.integer  "baths_id"
+    t.integer  "property_id"
+    t.integer  "price_id"
+    t.string   "pets"
+    t.string   "name"
+    t.integer  "phone"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "square_footage"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "users", :force => true do |t|

@@ -1,75 +1,102 @@
 <div class="row">
   <div class="span6 offset1">
-    <%= form_tag do %>
+    <h1>FORM</h1>
+  </div>
+</div>
 
-      <%= label_tag(:q, "Street:") %>
-      <%= text_field_tag(:q) %>
+<div class="row">
+  <div class="span6 offset1">
+    <%= form_for(@form) do |f| %>
 
-      <%= label_tag(:q, "City:") %>
-      <%= text_field_tag(:q) %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
 
-      <%= label_tag(:q, "State:") %>
-      <%= text_field_tag(:q) %>
+      <%= f.label :phone %>
+      <%= f.telephone_field :phone %>
 
-      <%= label_tag(:q, "Zip Code:") %>
-      <%= text_field_tag(:q) %>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
 
-      <%= label_tag(:q, "Type:") %>
-      <%= radio_button_tag(:type, "rental") %>
-      <%= label_tag(:type_rent, "Rental") %>
-      <%= radio_button_tag(:type, "residential") %>
-      <%= label_tag(:type_resident, "Residential") %>
+      <%= f.label :street_address %>
+      <%= f.text_field :street_address %>
 
-      <%= label_tag(:q, "Property Type:") %>
-      <select name="property_id" id="property_id">
-        <option value="1">Apartment</option>
-        <option value="2">Family Home</option>
-        <option value="3">Condo</option>
-        <option value="4">Share</option>
-      </select>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
 
-    <p>
-      <%= label_tag(:q, "Rent:") %>
-     $<%= text_field_tag(:q) %>
-      <select name="per_id" id="per_id">
-        <option value="1">per week</option>
-        <option value="2">per month</option>
-        <option value="3">per year</option>
-      </select>
-    </p>
+      <%= f.label :state %>
+      <%= f.text_field :state %>
 
-      <%= label_tag(:q, "Deposit:") %>
-     $<%= text_field_tag(:q) %>
+      <%= f.label :zip_code %>
+      <%= f.text_field :zip_code %>
 
-      <%= label_tag(:q, "Beds:") %>
-      <select name="beds_id" id="beds_id">
-        <option value="1">Studio</option>
-        <option value="2">1</option>
-        <option value="3">2</option>
-        <option value="4">3</option>
-        <option value="5">4</option>
-        <option value="6">5</option>
-        <option value="7">6</option>
-        <option value="8">7</option>
-        <option value="9">8</option>
-        <option value="10">9+</option>
-      </select>
+      <%= f.label :type %>
+      <%= f.radio_button(:type, "rental") %>
+      <%= f.label(:type_rent, "Rental") %>
+      <%= f.radio_button(:type, "residential") %>
+      <%= f.label(:type_resident, "Residential") %>
 
-      <%= label_tag(:q, "Baths:") %>
-      <select name="baths_id" id="baths_id">
-        <option value="1">0</option>
-        <option value="2">1</option>
-        <option value="3">2</option>
-        <option value="4">3</option>
-        <option value="5">4</option>
-        <option value="6">5</option>
-        <option value="7">6</option>
-        <option value="8">7</option>
-        <option value="9">8</option>
-        <option value="10">9+</option>
-      </select>
+      <%= f.label :property_type %>
+      <%= f.select(:property_id, options_for_select([['Apartment', 1],
+                                                      ['Family Home', 2],
+                                                      ['Condo', 3],
+                                                      ['Share', 4]], 1)) %>
+      <br></br>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
 
-      <%= submit_tag "Next", class: "btn btn-primary" %>
+      <%= f.label :description %>
+      <%= f.text_area :description, :size => "60x12" %>
+
+      <%= f.label :square_footage %>
+      <%= f.text_field :square_footage %>
+
+      <%= f.label :price %>
+      $<%= f.text_field :price %>
+      <%= f.select(:price_id, options_for_select([['per week', 1],
+                                                   ['per month', 2],
+                                                   ['per year', 3]], 2)) %>
+
+      <%= f.label :beds %>
+      <%= f.select(:beds_id, options_for_select([['Studio', 1],
+                                                      ['1', 2],
+                                                      ['2', 3],
+                                                      ['3', 4],
+                                                      ['4', 5],
+                                                      ['5', 6],
+                                                      ['6', 7],
+                                                      ['7', 8],
+                                                      ['8', 9],
+                                                      ['9+', 10]], 1)) %>
+
+      <%= f.label :baths %>
+      <%= f.select(:baths_id, options_for_select([['0', 1],
+                                                  ['1', 2],
+                                                  ['2', 3],
+                                                  ['3', 4],
+                                                  ['4', 5],
+                                                  ['5', 6],
+                                                  ['6', 7],
+                                                  ['7', 8],
+                                                  ['8', 9],
+                                                  ['9+', 10]], 1)) %>
+
+
+      <%= f.label :pets %>
+      <%= f.radio_button(:pets, "cats") %>
+      <%= f.label(:pets_cat, "Cats") %>
+      <%= f.radio_button(:pets, "dogs") %>
+      <%= f.label(:pets_dog, "Dogs") %>
+      <%= f.radio_button(:pets, "both") %>
+      <%= f.label(:pets_both, "Both") %>
+      <%= f.radio_button(:pets, "none") %>
+      <%= f.label(:pets_none, "None") %>
+
+      <%= f.label :amenities %>
+      <%= f.text_area :amenities, :size => "60x12" %>
+
+      <%= f.file_field :avatar %>
+
+      <%= f.submit "Next", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

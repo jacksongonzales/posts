@@ -4,5 +4,12 @@ class FormsController < ApplicationController
   end
 
   def create
+    @form = Form.new(params[:form])
+#    binding.pry
+    if @form.save
+      redirect_to thanks_path
+    else
+      render 'new'
+    end
   end
 end

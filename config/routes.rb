@@ -3,7 +3,7 @@ Postletsapp::Application.routes.draw do
 
   root to: 'forms#new'
 
-  match '/description', to: 'forms#description'
+  match '/thanks', to: 'forms#thanks'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
